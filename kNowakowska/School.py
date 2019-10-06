@@ -5,7 +5,7 @@ from kNowakowska.people.OfficeWorker import OfficeWorker
 if __name__ == '__main__':
 
     person_one = OfficeWorker("Ken", "Follet", "05.06.1949")
-    person_two = Student("Jacek", "Trojanowski", "10.20.1985", 6.6, "Krótki życiorys dotyczący danej osoby")
+    person_two = Student("Jacek", "Trojanowski", "26.07.1985", 6.6, "Krótki życiorys dotyczący danej osoby")
     person_three = Teacher("Stephen", "King", "21.09.1947", 9.9)
 
     print(person_one.present_yourself())
