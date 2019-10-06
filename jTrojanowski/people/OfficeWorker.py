@@ -1,4 +1,4 @@
-from kNowakowska.people.Person import SchoolPerson
+from jTrojanowski.people.Person import SchoolPerson
 
 
 class OfficeWorker(SchoolPerson):

@@ -1,6 +1,6 @@
-from kNowakowska.people.Student import Student
-from kNowakowska.people.Teacher import Teacher
-from kNowakowska.people.OfficeWorker import OfficeWorker
+from jTrojanowski.people.Student import Student
+from jTrojanowski.people.Teacher import Teacher
+from jTrojanowski.people.OfficeWorker import OfficeWorker
 
 if __name__ == '__main__':
 
