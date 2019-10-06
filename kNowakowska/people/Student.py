@@ -1,4 +1,4 @@
-from PytPOZ02_School.kNowakowska.people.Person import SchoolPerson
+from kNowakowska.people.Person import SchoolPerson
 
 
 class Student(SchoolPerson):
