@@ -1,6 +1,6 @@
 from datetime import date
 import os
-from people.Person import Person
+from aDzbanuszek.people.Person import Person
 
 
 class Student(Person):
