@@ -7,14 +7,13 @@ class TeacherException(Exception):
 
 class Teacher(Person):
 
-
     def __init__(self, name, surname, dateOfBirth, engagement):
         super().__init__(name, surname, dateOfBirth)
         self.engagement = engagement
         self.vacationDays = 26
 
     def takeVacation(self, days):
-        if(days > self.vacationDays):
+        if days > self.vacationDays:
             raise TeacherException("You do not have so many days. You're left {}".format(self.vacationDays))
         else:
             self.vacationDays -= days
