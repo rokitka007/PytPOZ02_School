@@ -13,11 +13,11 @@ class Teacher(Person):
 
     def takeVacation(self, delta):
         if self.vacationDay == 0:
-            print('Teacher ' + Teacher.getName(self) + Teacher.getSecond_name(self) + ' do not have vacation day left')
+            print('Teacher ' + self.getName() + self.getSecond_name() + ' do not have vacation day left')
             return self.vacationDay == 0
         if self.vacationDay < delta:
             print(
-                'Teacher ' + Teacher.getName(self) + Teacher.getSecond_name(self) + ' do not have enough days')
+                'Teacher ' + self.getName() + self.getSecond_name() + ' do not have enough days')
             return self.vacationDay == self.vacationDay
         self.vacationDay = self.vacationDay - delta
 
