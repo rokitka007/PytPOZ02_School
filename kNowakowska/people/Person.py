@@ -1,6 +1,5 @@
 from datetime import datetime
 
-
 class Person():
 
     def __init__(self, name, surname, dateOfBirth):
