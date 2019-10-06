@@ -1,6 +1,6 @@
-from PytPOZ02_School.kNowakowska.people.OfficeWorker import OfficeWorker
-from PytPOZ02_School.kNowakowska.people.Teacher import Teacher
-from PytPOZ02_School.kNowakowska.people.Student import Student
+from kNowakowska.people.OfficeWorker import OfficeWorker
+from kNowakowska.people.Teacher import Teacher
+from kNowakowska.people.Student import Student
 
 if __name__ == '__main__':
 
