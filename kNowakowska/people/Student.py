@@ -15,4 +15,3 @@ class Student(Person):
 
     def presentCV(self):
         print(self.cv)
-
