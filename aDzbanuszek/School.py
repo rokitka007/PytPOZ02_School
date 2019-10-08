@@ -1,7 +1,7 @@
 from datetime import date
-from people.Person import Person
-from people.Student import Student
-from people.Teacher import Teacher
+from aDzbanuszek.people.Person import Person
+from aDzbanuszek.people.Student import Student
+from aDzbanuszek.people.Teacher import Teacher
 
 if __name__ == '__main__':
     print("Welcome in my School")
@@ -32,6 +32,4 @@ if __name__ == '__main__':
     print('(-4) {}'.format(teacher_1.checkVacationLeft()))
     print(teacher_1.checkVacationLeft())
 
-
     print(teacher_1.checkVacationLeft())
-
