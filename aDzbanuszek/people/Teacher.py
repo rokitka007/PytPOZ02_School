@@ -1,6 +1,7 @@
 from datetime import date
 import os
 from aDzbanuszek.people.Person import Person
+from aDzbanuszek.people.Student import Student
 
 
 class Teacher(Person):
@@ -23,3 +24,7 @@ class Teacher(Person):
 
     def checkVacationLeft(self):
         return self.vacationDay
+
+    def transferKnowledge(self):
+
+        pass

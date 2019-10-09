@@ -14,7 +14,7 @@ if __name__ == '__main__':
     print(person_2.name + ' ' + str(person_2.born_data))
     print(person_2.get_age())
     print('\n')
-    student_1 = Student('Ryszard', 'Zorro', date(1998, 5, 20), 'pierwszy', 0.2)
+    student_1 = Student('Ryszard', 'Zorro', date(1998, 5, 20), 'pierwszy', 0.2, skills={'Biology': 1.0, 'Chemistry': 0.2, 'Math': 0.80, 'English':0.2, 'History' : 0.0})
     student_1.downloadCV()
     student_1.presentCV()
     print('\n')
@@ -33,3 +33,7 @@ if __name__ == '__main__':
     print(teacher_1.checkVacationLeft())
 
     print(teacher_1.checkVacationLeft())
+#    print(person_1.getSkillsValue())
+    print(student_1.obedience)
+    print(student_1.getSkillsValue())
+    print(student_1.getKnowledge(1))
