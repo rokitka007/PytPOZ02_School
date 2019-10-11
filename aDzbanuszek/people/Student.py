@@ -27,6 +27,7 @@ class Student(Person):
 
     def getPreferences(self):
         return self.preferences
+#dodac: jesli mamy max z czegos uczsie czegos inneg?
 
     def getKnowledge(self, val):
         for key, value in self.skills.items():

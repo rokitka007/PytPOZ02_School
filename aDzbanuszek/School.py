@@ -37,3 +37,5 @@ if __name__ == '__main__':
     print(student_1.obedience)
     print(student_1.getSkillsValue())
     print(student_1.getKnowledge(1))
+    print(teacher_1.transferKnowledge('Math', student_1))
+    print(student_1.defineSkills())

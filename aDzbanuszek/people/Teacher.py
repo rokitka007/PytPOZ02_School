@@ -25,6 +25,10 @@ class Teacher(Person):
     def checkVacationLeft(self):
         return self.vacationDay
 
-    def transferKnowledge(self):
+    def transferKnowledge(self, key, Student):
+        skill = Student.getSkillsValue()
+        value_skill = skill[key]
+        transfer_knowledge = value_skill*self.engagement
 
-        pass
+        return transfer_knowledge
+
