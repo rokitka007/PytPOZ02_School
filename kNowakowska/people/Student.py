@@ -1,6 +1,5 @@
 from kNowakowska.people.Person import Person
 
-
 class Student(Person):
 
     def setCV(self, exp, hobby):
@@ -15,4 +14,3 @@ class Student(Person):
 
     def presentCV(self):
         print(self.cv)
-
