@@ -1,4 +1,4 @@
-from kNowakowska.people.Person import Person
+from kNowakowska.dishvater.Person import Person
 
 
 class Student(Person):

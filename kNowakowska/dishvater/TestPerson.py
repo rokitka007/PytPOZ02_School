@@ -1,6 +1,6 @@
 import unittest
 
-from kNowakowska.people.Person import Person
+from kNowakowska.dishvater.Person import Person
 
 
 class MyTestCase(unittest.TestCase):
