@@ -7,8 +7,7 @@ class TeacherException(Exception):
 
 class Teacher(Person):
 
-
-    def __init__(self, name, surname, dateOfBirth, engagement):
+    def __init__(self, name, surname, dateOfBirth, engagement=1):
         super().__init__(name, surname, dateOfBirth)
         self.engagement = engagement
         self.vacationDays = 26
@@ -20,4 +19,4 @@ class Teacher(Person):
             self.vacationDays -= days
 
     def checkVacationLeft(self):
-        print("I'm left () days of vacation".format(self.vacationDays))
+        print("I'm left {} days of vacation".format(self.vacationDays))
