@@ -1,5 +1,6 @@
 from datetime import date
 from aDzbanuszek.people.Person import Person
+from aDzbanuszek.people.Skill import Skill
 from aDzbanuszek.people.Student import Student
 from aDzbanuszek.people.Teacher import Teacher
 
@@ -14,28 +15,26 @@ if __name__ == '__main__':
     print(person_2.name + ' ' + str(person_2.born_data))
     print(person_2.get_age())
     print('\n')
-    student_1 = Student('Ryszard', 'Zorro', date(1998, 5, 20), 'pierwszy', 0.2, skills={'Biology': 1.0, 'Chemistry': 0.2, 'Math': 0.80, 'English':0.2, 'History' : 0.0})
-    student_1.downloadCV()
-    student_1.presentCV()
+    student_1 = Student(name='Ryszard', second_name='Zorro', born_data=date(1998, 5, 20), skills=None, CV="coś tam",
+                        obedience=0.4, preferences=None)
+
     print('\n')
     teacher_1 = Teacher('Franciszek', 'Lubawy', date(1980, 5, 15), 26, 0.7)
     print(teacher_1.name + ' ' + str(teacher_1.born_data))
-    teacher_1.takeVacation(10)
-    print('(-10) {}'.format(teacher_1.checkVacationLeft()))
-    teacher_1.takeVacation(10)
-    print('(-10) {}'.format(teacher_1.checkVacationLeft()))
-    teacher_1.takeVacation(10)
-    print('(-10) {}'.format(teacher_1.checkVacationLeft()))
-    teacher_1.takeVacation(6)
-    print('(-6) {}'.format(teacher_1.checkVacationLeft()))
-    teacher_1.takeVacation(4)
-    print('(-4) {}'.format(teacher_1.checkVacationLeft()))
-    print(teacher_1.checkVacationLeft())
 
-    print(teacher_1.checkVacationLeft())
-#    print(person_1.getSkillsValue())
-    print(student_1.obedience)
-    print(student_1.getSkillsValue())
-    print(student_1.getKnowledge(1))
-    print(teacher_1.transferKnowledge('Math', student_1))
-    print(student_1.defineSkills())
+
+    # print(teacher_1.transferKnowledge('Math', student_1))
+
+ #   person_2.defineSkills()
+ #   person_2.presentSkills()
+
+    student_1.setPreferences([Skill.BIOLOGY, Skill.MATH])
+    student_1.getPreferences()
+
+    print(student_1.getObedience())
+    student_1.defineSkills()
+    student_1.presentSkills()
+    print(student_1.getGeneralKnowledge())
+    student_1.presentSkills()
+    student_1.getKnowledge(Skill.MATH, 0.1)
+    student_1.presentSkills()

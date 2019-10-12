@@ -1,14 +1,21 @@
 from datetime import date
 import random
 
+from aDzbanuszek.people.Skill import Skill
+
+
+class PersonException(Exception):
+    pass
+
 
 class Person:
 
-    def __init__(self, name, second_name, born_data=date(1982, 5, 20),
-                 skills={'Biology': 0.8, 'Chemistry': 0.8, 'Math': 0.8, 'English': 0.8, 'History': 0.8}):
+    def __init__(self, name, second_name, born_data=date(1982, 5, 20), skills=None):
         self.name = str(name)
         self.second_name = str(second_name)
         self.born_data = born_data
+        if skills is None:
+            skills = {}
         self.skills = skills
 
     def get_age(self):
@@ -25,16 +32,22 @@ class Person:
     def getSecond_name(self):
         return self.second_name
 
-    def getSkillsValue(self):
-        return self.skills
+    def defineSkills(self, skills=None, automatic=True):
+        if not skills and automatic is True:
+            self.skills = {Skill.CHEMISTRY: round(random.uniform(0, 1), 1),
+                           Skill.BIOLOGY: round(random.uniform(0, 1), 1),
+                           Skill.MATH: round(random.uniform(0, 1), 1),
+                           Skill.ENGLISH: round(random.uniform(0, 1), 1),
+                           Skill.HISTORY: round(random.uniform(0, 1), 1)}
+        elif not skills and automatic is False:
+            raise PersonException("Give skills or try automatic skills creation")
+        else:
+            self.skills = skills
 
-    def defineSkills(self):
-        def random_num(low, high, n):
-            for _ in range(n):
-                yield random.randint(low, high) / 10
+    def presentSkills(self):
+        print("My skills: \n")
+        for k, v in self.skills.items():
+            print("{}: {}".format(k.name, v))
 
-        for key, value in self.skills.items():
-            for v in random_num(0, 9, 5):
-                self.skills[key] = v
-
-        return self.skills
+    def _getSkillValue(self, skill):
+        return self.skills.get(skill)
