@@ -1,3 +1,5 @@
+import os
+
 from kNowakowska.people.Person import Person
 from kNowakowska.people.Skill import Skill
 
@@ -30,6 +32,10 @@ class Student(Person):
     def presentCV(self):
         print(self.cv)
 
+    def downloadCV(self):
+        with open("{}_{}_CV.txt".format(self.getName(), self.getSurname()), 'w') as f:
+            f.writelines(self.getName())
+
     def setPreferences(self, preferences):
         if not isinstance(preferences, list):
             raise StudentException("preferences has to be list of Skills!")
@@ -60,3 +66,18 @@ class Student(Person):
         else:
             self.skills.update({skill: self.skills.get(skill)+knowledge})
             self.presentSkills()
+        return self.skills.get(skill)
+
+    def getGeneralKnowledge(self, skills, value):
+        updated_skills = []
+        for el in skills:
+            learned = self.getKnowledge(el, value)
+            updated_skills.append(learned)
+        return updated_skills
+
+    def checkSkillLack(self, skill):
+        skill_value = self._getSkillValue(skill)
+        lack_of_skill = 1-skill_value
+        print("You will be expert in {} if you gain {}".format(skill.name, skill_value))
+        return lack_of_skill
+

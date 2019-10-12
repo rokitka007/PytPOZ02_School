@@ -1,3 +1,5 @@
+import os
+
 from kNowakowska.people.Skill import Skill
 from kNowakowska.people.Student import Student
 from kNowakowska.people.Teacher import Teacher
@@ -21,6 +23,8 @@ if __name__ == '__main__':
     student.getPreferences()
     student.getKnowledge(Skill.CHEMISTRY, 0.2)
     student.getKnowledge(Skill.BIOLOGY, 0.6)
+
+    print(os.path.abspath("kNowakowska/School.py"))
 
     # teacher.presentYourself()
     # teacher.presentSkills()
