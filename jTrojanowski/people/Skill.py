@@ -1,9 +1,9 @@
-from enum import Enum
+from enum import Enum, auto
 
 
 class Skills(Enum):
-    Biology = 0
-    Chemistry = 0
-    Math = 0
-    English = 0
-    History = 0
+    BIOLOGY = auto()
+    CHEMISTRY = auto()
+    MATH = auto()
+    ENGLISH = auto()
+    HISTORY = auto()
