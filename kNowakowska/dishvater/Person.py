@@ -1,16 +1,21 @@
 from datetime import datetime
 from Skill import Skill
-from random import randrange
+from random import randrange, uniform
+
+
+class PersonException(Exception):
+    pass
 
 
 class Person:
 
-    def __init__(self, name, surname, dateOfBirth, automatic=True):
+    def __init__(self, name, surname, dateOfBirth, skills=None):
+        if skills is None:
+            skills = {}
         self.name = name
         self.surname = surname
         self.dateOfBirth = datetime.strptime(dateOfBirth, "%d-%m-%Y")
-        self.skills = {}
-        self.automatic = automatic
+        self.skills = skills
 
     def presentYourself(self):
         print("Hi, I'm {} {} and I'm {} years old".format(self.name, self.surname, self.getAge()))
@@ -26,10 +31,20 @@ class Person:
     def getSurname(self):
         return self.surname
 
-    def defineSkills(self):
-        if self.automatic:
-            return Skill.__members__
+    def defineSkills(self, skills=None, automatic=True):
+        if not skills and automatic is True:
+            self.skills = {Skill.CHEMISTRY: round(uniform(0, 1), 2), Skill.ENGLISH: round(uniform(0, 1), 2),
+                           Skill.BIOLOGY: round(uniform(0, 1), 2), Skill.HISTORY: round(uniform(0, 1), 2),
+                           Skill.MATH: round(uniform(0, 1), 2)}
+        elif not skills and automatic is False:
+            raise PersonException("Give skills or try automatic skills creation")
+        else:
+            self.skills = skills
 
+    def presentSkills(self):
+        print("my skills: \n")
+        for k, v in self.skills.items():
+            print(f'{k.name} : {v}')
 
-peter = Person('Piotr', 'Kowalski', '23-04-1986')
-print(peter.defineSkills())
+    def _getSkillValue(self, skill):
+        return self.skills.get(skill)
