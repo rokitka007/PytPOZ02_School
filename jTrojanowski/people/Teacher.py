@@ -2,8 +2,8 @@ from jTrojanowski.people.Person import SchoolPerson
 
 
 class Teacher(SchoolPerson):
-    def __init__(self, name, surname, birthday, engagement, vacation_day=26):
-        super().__init__(name, surname, birthday)
+    def __init__(self, name, surname, birthday, engagement, skills=None, vacation_day=26):
+        super().__init__(name, surname, birthday, skills)
         self._engagement = float(engagement)
         self._vacation_day = int(vacation_day)
 
